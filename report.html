@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report System</title>
+  <link rel="stylesheet" href="report.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo">
+      <img src="logo.png" alt="Company Logo" class="logo-img"> <!-- Replace "logo.png" with your logo path -->
+    </div>
+    <p class="welcome-message">Welcome to Your Report!</p>
+    <div class="container">
+      <h1>Create New Report</h1>
+
+      <!-- Report Information Template -->
+      <section class="template">
+          <h2>Report Information</h2>
+          <div class="form-group">
+              <label for="datetime">Date & Time:</label>
+              <input type="text" id="datetime" name="datetime" readonly>
+          </div>
+          <div class="form-group">
+              <label for="reportNumber">Report Number:</label>
+              <input type="text" id="reportNumber" name="reportNumber" readonly class="report-number">
+          </div>
+          <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" readonly>
+          </div>
+          <div class="form-group">
+              <label for="jobNumber">Job Number:</label>
+              <input type="text" id="jobNumber" name="jobNumber" readonly>
+          </div>
+          <div class="form-group">
+              <label for="reportType">Work Type:</label>
+              <select id="reportType" name="reportType">
+                  <option value="">Choose</option>
+                  <option value="RM">Routine Maintenance</option>
+                  <option value="PM">Preventive Maintenance</option>
+                  <option value="CM">Corrective Maintenance</option>
+                  <option value="Req">Requests</option>
+                  <option value="E">Emergency</option>
+                  <option value="IP">Inspection</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="sector">Sector:</label>
+              <select id="sector" name="sector">
+                  <option value="">Choose</option>
+                  <option value="1">Sector 1</option>
+                  <option value="2">Sector 2</option>
+                  <option value="3">Sector 3</option>
+                  <option value="4">Sector 4</option>
+                  <option value="5">Sector 5</option>
+                  <option value="6">Sector 6</option>
+                  <option value="7">Sector 7</option>
+                  <option value="8">Sector 8</option>
+                  <option value="9">Sector 9</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="location">Location:</label>
+              <input type="text" id="location" name="location" readonly>
+              <button id="getLocation" class="small-button">Get Current Location</button>
+          </div>
+      </section>
+
+      <!-- Dynamic Templates Section -->
+      <section id="dynamicTemplates"></section>
+
+      <!-- Submit Button -->
+      <button id="submitReport" class="submit-button">Submit Report</button>
+      <button onclick="goBack()" class="submit-button">Back to Profile</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./supabase.js"></script>
+  <script src="./report.js"></script>
+</body>
+</html>
