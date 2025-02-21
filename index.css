@@ -1,0 +1,120 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0; /* Light gray background */
+  padding: 20px; /* Padding for smaller screens */
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px; /* Maximum width for the card */
+  text-align: center;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.logo-img {
+  max-width: 150px;
+  height: auto;
+}
+
+.welcome-message {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 18px;
+}
+
+.login-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Subtle blue glow */
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff; /* Blue button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+#username {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #333; /* Dark gray text */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .login-card {
+    width: 90%; /* 90% width on tablets/iPads */
+    padding: 15px;
+  }
+
+  input, button {
+    font-size: 14px; /* Smaller text on tablets */
+    padding: 8px;
+  }
+
+  .logo-img {
+    max-width: 120px; /* Smaller logo on tablets */
+  }
+
+  .welcome-message {
+    font-size: 16px; /* Smaller welcome message on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    width: 85%; /* 85% width on mobile */
+    padding: 10px;
+  }
+
+  input, button {
+    font-size: 12px; /* Smaller text on mobile */
+    padding: 6px;
+  }
+
+  .logo-img {
+    max-width: 100px; /* Smaller logo on mobile */
+  }
+
+  .welcome-message {
+    font-size: 14px; /* Smaller welcome message on mobile */
+  }
+}
