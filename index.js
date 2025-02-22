@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (identifier === "admin" && password === "M123321") {
           loginMessage.innerText = "Logged in successfully as Admin!";
           setTimeout(() => {
-            window.location.href = "profile.html";
+            window.location.href = ".profile/profile.html";
           }, 1000); // Redirect after 1 second
           return;
         }
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("User logged in:", data);
         loginMessage.innerText = "Logged in successfully!";
         setTimeout(() => {
-          window.location.href = "profile.html";
+          window.location.href = ".profile/profile.html";
         }, 1000); // Redirect after 1 second
         loadUserData();
       } catch (err) {
