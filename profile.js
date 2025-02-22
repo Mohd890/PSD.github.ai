@@ -53,7 +53,6 @@ function getReportStatistics() {
     }
   }
 
-
   return stats;
 }
 
@@ -69,7 +68,7 @@ function displayReportStats(stats) {
   `;
 }
 
-function logout() {
+async function logout() {
   try {
     const { error } = await supabase.auth.signOut();
     if (error) throw error;
