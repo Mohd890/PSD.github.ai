@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="index.css">
-</head>
-<body>
-  <div class="login-container">
-    <div class="logo">
-      <img src="logo.png" alt="Company Logo" class="logo-img"> <!-- Replace "logo.png" with your logo path -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="logo">
+        <img src="logo.png" alt="Company Logo" class="logo-img" />
+        <!-- Replace "logo.png" with your logo path -->
+      </div>
+      <p class="welcome-message">Welcome! Please log in.</p>
+      <form id="login-form" class="login-card">
+        <input
+          type="text"
+          id="identifier"
+          placeholder="Email or Username"
+          required
+        />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <div id="username"></div>
+      <div id="login-message" style="color: red; text-align: center; margin-top: 10px;"></div>
     </div>
-    <p class="welcome-message">Welcome! Please log in.</p>
-    <form id="login-form" class="login-card">
-      <input type="text" id="identifier" placeholder="Email or Username" required />
-      <input type="password" id="password" placeholder="Password" required />
-      <button type="submit">Login</button>
-    </form>
-    <div id="username"></div>
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="./supabase.js"></script>
-  <script src="./index.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./supabase.js"></script>
+    <script src="./index.js"></script>
+  </body>
 </html>
