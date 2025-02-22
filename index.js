@@ -10,9 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const identifier = document.getElementById("identifier").value.trim().toLowerCase();
       const password = document.getElementById("password").value.trim();
+      const loginMessage = document.getElementById("login-message");
 
       if (!identifier || !password) {
-        alert("Please enter both Email or Username and Password.");
+        loginMessage.innerText = "Please enter both Email or Username and Password.";
         return;
       }
 
@@ -21,8 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
       try {
         // Manual login for testing: Admin with password M123321
         if (identifier === "admin" && password === "M123321") {
-          alert("Logged in successfully as Admin!");
-          window.location.href = "profile.html";
+          loginMessage.innerText = "Logged in successfully as Admin!";
+          setTimeout(() => {
+            window.location.href = "profile.html";
+          }, 1000); // Redirect after 1 second
           return;
         }
 
@@ -34,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (error) {
           if (!error.message.includes("Invalid login credentials")) {
-            alert("Login failed: " + error.message);
+            loginMessage.innerText = "Login failed: " + error.message;
             return;
           }
 
@@ -47,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
               .single();
 
             if (userError || !userData) {
-              alert("Invalid Email or Username. Please try again.");
+              loginMessage.innerText = "Invalid Email or Username. Please try again.";
               return;
             }
 
@@ -59,17 +62,19 @@ document.addEventListener("DOMContentLoaded", function () {
           }
 
           if (error) {
-            alert("Incorrect password. Please try again.");
+            loginMessage.innerText = "Incorrect password. Please try again.";
             return;
           }
         }
 
         console.log("User logged in:", data);
-        alert("Logged in successfully!");
-        window.location.href = "profile.html";
+        loginMessage.innerText = "Logged in successfully!";
+        setTimeout(() => {
+          window.location.href = "profile.html";
+        }, 1000); // Redirect after 1 second
         loadUserData();
       } catch (err) {
-        alert("An error occurred. Please try again.");
+        loginMessage.innerText = "An error occurred. Please try again.";
         console.error("Login error:", err);
       }
     });
